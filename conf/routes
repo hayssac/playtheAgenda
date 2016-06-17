@@ -1,0 +1,28 @@
+# Routes
+
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+# Página principal
+GET / controllers.HomeController.index
+
+# Listar contatos
+GET /contatos controllers.HomeController.contatos
+
+# Adicionar contatos
+GET /contatos/new controllers.HomeController.create
+POST /contatos controllers.HomeController.save
+
+# Editar contatos existentes
+GET /contatos/:id controllers.HomeController.edit(id:Long)
+POST /contatos/:id controllers.HomeController.update(id:Long)
+
+# Excluir um contato
+GET /contatos/:id/delete controllers.HomeController.delete(id:Long)
+
+
+# Operações de sessão
+GET /login	             controllers.HomeController.login(name: String)
+GET /logout                         controllers.HomeController.logout
+
+# Map static resources from the /public folder to the /assets URL path
+GET /assets/*file controllers.Assets.at(path="/public", file)

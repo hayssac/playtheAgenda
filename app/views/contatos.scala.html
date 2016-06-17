@@ -1,0 +1,37 @@
+@(listaContatos: List[Contato], name: String)(implicit messages: Messages)
+
+
+@main("Welcome to Play") {
+
+<div class="container">
+    <h1>Bem-vindo, @name!</h1>
+    <divider></divider>
+    <section>
+        <h5>Tabela</h5>
+        <table style="width:100%">
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Opções</th>
+            </tr>
+        @for(contato <- listaContatos) {
+            <tr>
+                <td>@contato.nome</td>
+                <td>@contato.email</td>
+                <td>@contato.telefone</td>
+                <td><a href="@{routes.HomeController.edit(contato.id)}">Editar</a> 
+                <a href="@{routes.HomeController.delete(contato.id)}">Excluir</a>
+                </td>
+            </tr>
+            }
+        </table>
+    </section>
+    <divider></divider>
+    <section>
+        <h5>Quer adicionar mais um contato? Clique <a href="/contatos/new">aqui.</a></h5>
+        <h5><a href="/logout">Logout</a></h5>
+    </section>
+</div>
+
+}

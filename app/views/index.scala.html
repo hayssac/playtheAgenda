@@ -1,0 +1,16 @@
+@(message: String)
+
+@main("Welcome to Play") {
+
+<div class="container">
+    <h1>Bem vindo à sua lista de contatos.</h1>
+    <h2>Faça login para acessar sua lista de contatos.</h2>
+    
+    <form class="form" action="/login">
+      <label for="nome">Nome</label>
+   		<input type="text" name="name" id="nome" class="form-control">
+   		<input type="submit" value="Entrar">
+   	</form>
+
+</div>
+}

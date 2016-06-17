@@ -1,0 +1,19 @@
+@(novocontato: Form[Contato])(implicit messages: Messages)
+
+@import helper._
+
+@main("Welcome to Play") {
+<div class="container">
+    
+        @form(action = routes.HomeController.save()) {
+            <div style="display: none">
+            @inputText(novocontato("id"), '_label -> "ID")
+            </div>
+            @inputText(novocontato("nome"), '_label -> "Nome", 'placeholder -> "Ex.: Joãozinho Maria da Silva")
+            @inputText(novocontato("email"), '_label -> "E-mail", 'placeholder -> "Ex.: seuemail@provedora.com.br")
+            @inputText(novocontato("telefone"), '_label -> "Telefone", 'placeholder -> "Ex.: (DDD) 9XXXX-XXXX")
+            <button type="submit">Enviar</button>
+        }
+</div>
+
+}
